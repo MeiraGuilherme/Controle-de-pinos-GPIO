@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "author": "Seu Nome",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "raspberry-pi-pico",
+      "id": "pico",
+      "x": -150,
+      "y": -50
+    },
+    {
+      "type": "rgb-led",
+      "id": "led_red",
+      "x": 100,
+      "y": -100,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "rgb-led",
+      "id": "led_green",
+      "x": 100,
+      "y": 0,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "rgb-led",
+      "id": "led_blue",
+      "x": 100,
+      "y": 100,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "buzzer",
+      "id": "buzzer",
+      "x": 50,
+      "y": 150
+    }
+  ],
+  "connections": [
+    { "from": "pico:GP11", "to": "led_green:anode" },
+    { "from": "pico:GP12", "to": "led_blue:anode" },
+    { "from": "pico:GP13", "to": "led_red:anode" },
+    { "from": "pico:GP21", "to": "buzzer:signal" },
+    { "from": "pico:GND", "to": "led_green:cathode" },
+    { "from": "pico:GND", "to": "led_blue:cathode" },
+    { "from": "pico:GND", "to": "led_red:cathode" },
+    { "from": "pico:GND", "to": "buzzer:GND" }
+  ]
+}
